@@ -12,15 +12,16 @@ class Profile {
 
 class User {
     #name;
-    #profiles;
+    #profiles = [];
 
     constructor(name) {
         this.#name = name;
-        this.#profiles = [];
+        this.addProfile("padrão")
     }
 
     addProfile(profile) {
-        this.#profiles.push(profile);
+       
+        this.#profiles.push(new Profile(profile));
     }
 
     getProfiles() {
@@ -46,16 +47,18 @@ class User {
 }
 
 const user = new User('Alice');
+user.updateProfileList('profileList');
 
 document.getElementById('userName').textContent = user.getName();
 
 document.getElementById('addProfileBtn').addEventListener('click', function () {
     let profileType = document.getElementById('profileType').value;
     if (profileType) {
-        const newProfile = new Profile(profileType);
-        user.addProfile(newProfile);
+        
+        user.addProfile(profileType);
         
         user.updateProfileList('profileList');
         profileType = ''; 
     }
 });
+
