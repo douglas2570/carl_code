@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiles</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Profiles</h1>
+        <h2>User: <span id="userName"> <!-- Current user --> </span></h2> 
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <h3>Register Profile</h3>
+            <label for="profileType">Profile Type</label>
+            <input type="text" id="profileType" placeholder="Enter profile type">
+            <button id="addProfileBtn">Register</button>
+        </section>
+
+        <section class="profile-list-section">
+            <h3>Registered Profiles</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Profile Type</th>
+                    </tr>
+                </thead>
+                <tbody id="profileList">
+                    <!-- Registered profiles  -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="./src/script.js"></script>
+</body>
+</html>
