@@ -1,5 +1,5 @@
 class Profile {
-    #role;
+    #role; // # private access modifier
 
     constructor(role) {
         this.#role = role;
@@ -32,27 +32,27 @@ class User {
     }
 }
 
-// Instanciando o usuário
+
 const user = new User('Alice');
 
-// Atualizando o nome do usuário na página
+
 document.getElementById('userName').textContent = user.getName();
 
-// Função para adicionar perfil
+
 document.getElementById('addProfileBtn').addEventListener('click', function () {
     const profileType = document.getElementById('profileType').value;
     if (profileType) {
         const newProfile = new Profile(profileType);
         user.addProfile(newProfile);
         updateProfileList();
-        document.getElementById('profileType').value = ''; // Limpar o campo de entrada
+        document.getElementById('profileType').value = ''; 
     }
 });
 
-// Função para atualizar a lista de perfis
+
 function updateProfileList() {
     const profileList = document.getElementById('profileList');
-    profileList.innerHTML = ''; // Limpar a lista existente
+    profileList.innerHTML = ''; 
 
     user.getProfiles().forEach(profile => {
         const row = document.createElement('tr');
