@@ -16,7 +16,7 @@ class User {
 
     constructor(name) {
         this.#name = name;
-        this.addProfile("padrão")
+        this.addProfile("default")
     }
 
     addProfile(profile) {
