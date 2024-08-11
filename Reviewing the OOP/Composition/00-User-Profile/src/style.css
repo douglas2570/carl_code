@@ -6,7 +6,8 @@ body {
 }
 
 header {
-    background-color: #007bff;
+    background-color: #212E53;
+    opacity: 0.9;
     color: white;
     padding: 20px 10px 5px 10px;
     text-align: center;
@@ -21,10 +22,12 @@ h2 {
     margin: 0 15 0 0;
     font-size: 1em;
     text-align: left;
+     
 }
 
 h2 #userName {
-  color: #000000;
+  color: white;
+  text-decoration:underline
 }
 
 main {
@@ -53,12 +56,12 @@ main {
 .profile-section button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #212E53;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.9;
     box-sizing: border-box;
 }
 
@@ -76,10 +79,10 @@ table {
 
 table th {
     width: 100vw;
-    background-color: #007bff;
+    background-color: #212E53;
     color: white;
     padding: 10px;
-    opacity: 0.8;
+    opacity: 0.9;
     border-radius: 5px 5px 0 0;
     text-align: left;
 }
