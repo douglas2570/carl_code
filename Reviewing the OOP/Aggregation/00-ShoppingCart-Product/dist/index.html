@@ -3,39 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profiles</title>
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-
+  
     <header>
-        <h1>Profiles</h1>
-        <h2>User: <span id="userName"> <!-- Current user --> </span></h2> 
+        <div class="logo">Carl Code</div>
+        <input type="text" class="search-bar" placeholder="Search...">
+        <div class="cart">            
+            <span id="cart-count">0</span>      
+            <span class="material-symbols-outlined shopping_cart">shopping_cart</span>
+        </div>
     </header>
-
     <main>
-        <section class="profile-section">
-            <h3>Register Profile</h3>
-            <label for="profileType">Profile Type</label>
-            <input type="text" id="profileType" placeholder="Enter profile type">
-            <button id="addProfileBtn">Register</button>
-        </section>
-
-        <section class="profile-list-section">
-            <h3>Registered Profiles</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Profile Type</th>
-                    </tr>
-                </thead>
-                <tbody id="profileList">
-                    <!-- Registered profiles  -->
-                </tbody>
-            </table>
-        </section>
+        <div id="product-list" class="product-list">
+            <!-- Products will be dynamically generated here -->
+        </div>
     </main>
-
     <script src="./src/script.js"></script>
 </body>
 </html>
