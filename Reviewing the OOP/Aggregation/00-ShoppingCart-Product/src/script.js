@@ -135,7 +135,6 @@ function renderProducts() {
     });
 }
 
-
 window.onload = () => {
     renderProducts();
 };
