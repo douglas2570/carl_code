@@ -1,3 +1,4 @@
+// Product Class
 class Product {
     #name;
     #price;
@@ -24,6 +25,7 @@ class Product {
     }
 }
 
+// CartItem Class
 class CartItem {
     #quantity;
     #product;
@@ -54,6 +56,7 @@ class CartItem {
     }
 }
 
+// ShoppingCart Class
 class ShoppingCart {
     #totalValue;
     #items;
@@ -82,14 +85,14 @@ class ShoppingCart {
         }
 
         this.#totalValue += product.getPrice() * quantity;
-        this.updateCartCount();
+        this.#updateCartCount();
     }
 
     getItems() {
         return this.#items;
     }
 
-    updateCartCount() {
+    #updateCartCount() {
 
         const sumQuantity = this.#items.reduce((total, currentValue) =>{	
             return total = total + parseInt(currentValue.getQuantity())
@@ -99,6 +102,7 @@ class ShoppingCart {
     }
 }
 
+// Creating the "database" with products
 const productDatabase = [
     new Product("Laptop", 1000),
     new Product("Mouse", 20),
@@ -112,12 +116,9 @@ const productDatabase = [
     new Product("Graphic Tablet", 250)
 ];
 
+
 const shoppingCart = new ShoppingCart();
 
-function addToCart(productIndex) {
-    const product = productDatabase[productIndex];
-    shoppingCart.addItem(product);
-}
 
 function renderProducts() {
     const productContainer = document.getElementById('product-list');
@@ -134,6 +135,13 @@ function renderProducts() {
         productContainer.appendChild(productElement);
     });
 }
+
+
+function addToCart(productIndex) {
+    const product = productDatabase[productIndex];
+    shoppingCart.addItem(product);
+}
+
 
 window.onload = () => {
     renderProducts();
