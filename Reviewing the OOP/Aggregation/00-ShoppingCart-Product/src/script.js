@@ -102,6 +102,7 @@ class ShoppingCart {
     }
 }
 
+
 // Creating the "database" with products
 const productDatabase = [
     new Product("Laptop", 1000),
@@ -116,9 +117,7 @@ const productDatabase = [
     new Product("Graphic Tablet", 250)
 ];
 
-
 const shoppingCart = new ShoppingCart();
-
 
 function renderProducts() {
     const productContainer = document.getElementById('product-list');
@@ -136,13 +135,13 @@ function renderProducts() {
     });
 }
 
-
 function addToCart(productIndex) {
     const product = productDatabase[productIndex];
     shoppingCart.addItem(product);
 }
 
 
+//executes when loading the window
 window.onload = () => {
     renderProducts();
 };
