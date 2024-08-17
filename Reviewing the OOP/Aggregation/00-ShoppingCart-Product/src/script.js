@@ -93,7 +93,12 @@ class ShoppingCart {
     }
 
     updateCartCount() {
-        document.getElementById('cart-count').innerText = this.#items.length;
+
+        const sumQuantity = this.#items.reduce((total, currentValue) =>{	
+            return total = total + parseInt(currentValue.getQuantity())
+	   
+        }, 0)	
+       document.getElementById('cart-count').innerText = sumQuantity;
     }
 }
 
@@ -114,12 +119,6 @@ const productDatabase = [
 // Creating an instance of the shopping cart
 const shoppingCart = new ShoppingCart();
 
-// Function to add a product to the cart
-function addToCart(productIndex) {
-    const product = productDatabase[productIndex];
-    shoppingCart.addItem(product);
-}
-
 // Function to render the products on the page
 function renderProducts() {
     const productContainer = document.getElementById('product-list');
@@ -135,6 +134,12 @@ function renderProducts() {
 
         productContainer.appendChild(productElement);
     });
+}
+
+// Function to add a product to the cart
+function addToCart(productIndex) {
+    const product = productDatabase[productIndex];
+    shoppingCart.addItem(product);
 }
 
 // Initializing the page
