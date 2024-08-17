@@ -1,4 +1,3 @@
-// Product Class
 class Product {
     #name;
     #price;
@@ -25,7 +24,6 @@ class Product {
     }
 }
 
-// CartItem Class
 class CartItem {
     #quantity;
     #product;
@@ -56,7 +54,6 @@ class CartItem {
     }
 }
 
-// ShoppingCart Class
 class ShoppingCart {
     #totalValue;
     #items;
@@ -102,7 +99,6 @@ class ShoppingCart {
     }
 }
 
-// Creating the "database" with products
 const productDatabase = [
     new Product("Laptop", 1000),
     new Product("Mouse", 20),
@@ -116,10 +112,13 @@ const productDatabase = [
     new Product("Graphic Tablet", 250)
 ];
 
-// Creating an instance of the shopping cart
 const shoppingCart = new ShoppingCart();
 
-// Function to render the products on the page
+function addToCart(productIndex) {
+    const product = productDatabase[productIndex];
+    shoppingCart.addItem(product);
+}
+
 function renderProducts() {
     const productContainer = document.getElementById('product-list');
     productDatabase.forEach((product, index) => {
@@ -136,13 +135,7 @@ function renderProducts() {
     });
 }
 
-// Function to add a product to the cart
-function addToCart(productIndex) {
-    const product = productDatabase[productIndex];
-    shoppingCart.addItem(product);
-}
 
-// Initializing the page
 window.onload = () => {
     renderProducts();
 };
