@@ -1,4 +1,3 @@
-// Product Class
 class Product {
     #name;
     #price;
@@ -25,7 +24,6 @@ class Product {
     }
 }
 
-// CartItem Class
 class CartItem {
     #quantity;
     #product;
@@ -56,7 +54,6 @@ class CartItem {
     }
 }
 
-// ShoppingCart Class
 class ShoppingCart {
     #totalValue;
     #items;
