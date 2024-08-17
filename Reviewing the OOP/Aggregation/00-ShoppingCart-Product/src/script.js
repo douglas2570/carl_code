@@ -30,11 +30,14 @@ class CartItem {
 
     constructor(product, quantity = 1) {
         this.#product = product;
-        this.#quantity = quantity;
+        this.setQuantity(quantity)
     }
 
     setQuantity(quantity) {
-        this.#quantity = quantity;
+        if(quantity <= 0 )
+            this.#quantity = 1;
+        else
+            this.#quantity = quantity;
     }
 
     getQuantity() {
